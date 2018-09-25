@@ -1,0 +1,26 @@
+Required Configuration:
+	- Linux Ubuntu 14 and after
+	- Mac OSX
+Zmodels should work on Windows based plateform but have never been tested in this configuration. Installation on such plateform is at your own risk.
+
+Zmodels is using Numpy version 1.11.2 (or more recent), Scipy 0.18.1 (or more recent). You may also want to have Matplotlib, given examples use this librairy to plot results. 
+
+To install the package, create a folder at a user defined location (you may require root privileges):
+	mkdir my_installation_folder
+and copy the folder 'nmodels' and its content to this location:
+	cp -r ./zmodels my_installation_folder
+then edit the configuration file .bashrc, for example using:
+	cd
+	gedit .bashrc
+add the following lines at the end of the file (you may add a comment before using a '#' symbol):
+	export ZMODELS=my_installation_folder
+	export PYTHONPATH=$PYTHONPATH:$ZMODELS
+Please do not simplify these lines as the variable ZMODELS may be used inside the package. This installation works for the code and the the material librairy. In order to complete the installation, please reboot or use:
+	source .bashrc
+
+to check your installation, in a python console try:
+	import zmodels
+	zmodels.__version__
+or directly in the terminal enter the following command:
+	python -c 'import zmodels; print zmodels.__version__'
+this should return the current version of the librairy (curently 0.1.dev)
